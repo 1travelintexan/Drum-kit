@@ -10,6 +10,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin: 0px;
+  padding: 0px;
 }
 .key {
   width: 100px;
@@ -61,4 +63,44 @@ body {
 }
 .space {
   width: 40%;
+}
+
+@media only screen and (max-width: 700px) and (orientation: landscape) {
+  body {
+    width: 630px;
+    height: 160px;
+  }
+  .page {
+    width: 400px;
+    height: 240px;
+  }
+  .heading {
+    font-size: 1rem;
+    margin: -40px 0px 0px 0px;
+    padding: 6px;
+    width: 60%;
+    border: 1px solid black;
+  }
+  .key {
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    margin: 2px;
+  }
+  .key h4 {
+    font-size: 0.5rem;
+    padding: 0px;
+    color: rgb(189, 189, 189);
+  }
+  .key h6 {
+    color: rgb(233, 233, 7);
+    font-size: 0.8rem;
+    padding: 0px;
+    margin: 5px;
+    text-align: center;
+  }
+  .space {
+    width: 60%;
+    height: 30px;
+  }
 }
