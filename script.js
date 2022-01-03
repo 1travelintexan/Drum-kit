@@ -1,17 +1,3 @@
-// let aKey = document.querySelector("#aKey");
-// let aKeyAudio = document.querySelector(`audio[data-key='65']`);
-
-// aKey.addEventListener("click", () => {
-//   //checks if we have a sound on this key, if not then nothing happens
-//   if (!aKeyAudio) return;
-//   // if you hit the button quickly, it rewinds to the start to play again
-//   aKeyAudio.currentTime = 0;
-//   //plays the audio sound from html page
-//   aKeyAudio.play();
-//   //adds a class to change the border color and size of key
-//   aKey.classList.add("playing");
-// });
-
 function playSound(e) {
   //targets the audio element with the data-key code
   const audio = document.querySelector(`audio[data-key='${e.keyCode}']`);
