@@ -1,7 +1,20 @@
+// let aKey = document.querySelector("#aKey");
+// let aKeyAudio = document.querySelector(`audio[data-key='65']`);
+
+// aKey.addEventListener("click", () => {
+//   //checks if we have a sound on this key, if not then nothing happens
+//   if (!aKeyAudio) return;
+//   // if you hit the button quickly, it rewinds to the start to play again
+//   aKeyAudio.currentTime = 0;
+//   //plays the audio sound from html page
+//   aKeyAudio.play();
+//   //adds a class to change the border color and size of key
+//   aKey.classList.add("playing");
+// });
+
 function playSound(e) {
   //targets the audio element with the data-key code
   const audio = document.querySelector(`audio[data-key='${e.keyCode}']`);
-  console.log(e.keyCode);
   //targets the element with class key and with the data-key code
   const key = document.querySelector(`.key[data-key='${e.keyCode}']`);
   //checks if we have a sound on this key, if not then nothing happens
@@ -23,8 +36,25 @@ function removeTransition(e) {
 
 //listener to remove the transitions after it is done transforming
 const keys = document.querySelectorAll(".key");
+const clickedKeys = document.querySelectorAll(".key");
+
 keys.forEach((key) => {
   key.addEventListener("transitionend", removeTransition);
+});
+
+clickedKeys.forEach((key) => {
+  let clickedAudio = document.querySelector(`audio[data-key='${key.id}']`);
+  const clickedKey = document.querySelector(`.key[data-key='${key.id}']`);
+
+  key.addEventListener("click", () => {
+    //checks if we have a sound on this key, if not then nothing happens
+    if (!clickedAudio) return;
+    // if you hit the button quickly, it rewinds to the start to play again
+    clickedAudio.currentTime = 0;
+    clickedAudio.play();
+    //adds a class to change the border color and size of key
+    clickedKey.classList.add("playing");
+  });
 });
 
 //listener to play the sound on each key
